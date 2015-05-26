@@ -18,10 +18,22 @@
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>${cobertura.version}</version>
 				<configuration>
+					<instrumentation>
+						<excludes>
+							<exclude>*/*Test.class</exclude>
+						</excludes>
+					</instrumentation>
 					<formats>
 						<format>xml</format>
 					</formats>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -54,15 +66,27 @@
                 <version>2.6</version>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>${cobertura.version}</version>
-                <configuration>
-                    <formats>
-                        <format>xml</format>
-                    </formats>
-                </configuration>
-            </plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.version}</version>
+				<configuration>
+					<instrumentation>
+						<excludes>
+							<exclude>*/*Test.class</exclude>
+						</excludes>
+					</instrumentation>
+					<formats>
+						<format>xml</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>

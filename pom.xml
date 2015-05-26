@@ -379,29 +379,53 @@
                         </dependencies>
                     </plugin>
 					<plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>${cobertura.version}</version>
-                        <configuration>
-                            <formats>
-                                <format>xml</format>
-                            </formats>
-                        </configuration>
-                    </plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${cobertura.version}</version>
+						<configuration>
+							<instrumentation>
+								<excludes>
+									<exclude>*/*Test.class</exclude>
+								</excludes>
+							</instrumentation>
+							<formats>
+								<format>xml</format>
+							</formats>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>clean</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
                 </plugins>
             </build>
 			<reporting>
                 <plugins>
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>${cobertura.version}</version>
-                        <configuration>
-                            <formats>
-                                <format>xml</format>
-                            </formats>
-                        </configuration>
-                    </plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${cobertura.version}</version>
+						<configuration>
+							<instrumentation>
+								<excludes>
+									<exclude>*/*Test.class</exclude>
+								</excludes>
+							</instrumentation>
+							<formats>
+								<format>xml</format>
+							</formats>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>clean</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
                 </plugins>
             </reporting>
         </profile>
